@@ -1,0 +1,19 @@
+Задание 1 с использованием T-SQL:
+
+1. Запрос для вывода сотрудника с максимальной заработной платой:
+SELECT NAME, SALARY
+FROM EMPLOYEE
+WHERE SALARY = (SELECT DISTINCT MAX(SALARY) FROM EMPLOYEE);
+ 
+2. Запрос для вывода максимальной длины цепочки руководителей по таблице сотрудников
+
+3. Запрос для вывода отдел, с максимальной суммарной зарплатой сотрудников:
+SELECT TOP(1) DEPARTMENT_ID, SUM(SALARY) AS SUM_SALARY
+FROM EMPLOYEE
+GROUP BY  DEPARTMENT_ID
+ORDER BY SUM_SALARY DESC;
+
+4. Запрос для вывода сотрудника, чье имя начинается на «Р» и заканчивается на «н»:
+SELECT NAME
+FROM EMPLOYEE
+WHERE NAME LIKE ‘Р%н’;
