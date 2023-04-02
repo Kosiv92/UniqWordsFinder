@@ -13,7 +13,7 @@ namespace ConsoleSupport
     {
         private static string fileName = "\\example.txt";
 
-        private static string directory, filePath;
+        public static string directory, filePath;
 
         public static string InputPathToFile()
         {
@@ -32,7 +32,8 @@ namespace ConsoleSupport
                     Console.Write("Попробуйте снова: ");
                 }
                 else
-                {
+                {                    
+                    PrintOutInfo();
                     Console.WriteLine("Файл найден. Начните обработку нажатием любой клавиши");
                     Console.ReadKey();
                 }
@@ -46,9 +47,7 @@ namespace ConsoleSupport
         /// </summary>
         public static void PrintOutInfo()
         {
-            FileInfo fileInfo = new FileInfo(filePath);
-            
-            Console.Clear();
+            FileInfo fileInfo = new FileInfo(filePath);                       
 
             //Путь к файлу
             Console.Write($"Полный путь к файлу: ");
@@ -65,9 +64,7 @@ namespace ConsoleSupport
             Console.Write($"Время создания файла (UTC): ");            
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(fileInfo.CreationTimeUtc);
-            Console.ResetColor();
-
-            Console.ReadKey();
+            Console.ResetColor();                        
         }
 
     }

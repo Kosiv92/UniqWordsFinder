@@ -10,13 +10,10 @@ namespace UniqWordsFinder
 
         static void Main(string[] args)
         {
-            var client = new ConsoleClient();
-            client.AddActions();
-            var menu = new Menu(client.Actions);
-            while(true)
-            {
-                menu.ExecuteMenuItem();
-            }
+            var fileReader = new FileReader(InteractionMethods.InputPathToFile()); //считываем файл
+            IDataHandler dataHandler = new SyncRawDataHandler(fileReader.GetReadResultInLines()); //передаем результат обработчику
+            var client = new ConsoleClient(dataHandler);
+            client.ExecuteInConsole();
             
         }                
     }
