@@ -24,6 +24,8 @@ namespace FileSupport.Core
             _uniqueWords = new Dictionary<string, int>();
         }
 
+        public int UniqueWordsFound => _uniqueWords.Count;
+
         /// <summary>
         /// Подсчет уникальных слов в анализируемом файле
         /// </summary>

@@ -18,7 +18,7 @@ namespace UniqWordsFinder
 
         FileWriter fileWriter;
 
-        IDataHandler syncDataHandler;
+        IDataHandler dataHandler;
 
         public ConsoleClient()
         {
@@ -32,14 +32,27 @@ namespace UniqWordsFinder
         {
             _actions.Clear();
             _actions.Add("Посмотреть информацию о файле", InteractionMethods.PrintOutInfo);
-            syncDataHandler = new SyncRawDataHandler(fileReader.GetReadResultInLines());
+            dataHandler = new SyncRawDataHandler(fileReader.GetReadResultInLines());
             Action handleFile = () =>
             {
-                fileWriter = new FileWriter(fileReader.Directory, syncDataHandler.HandleData());
-                Process.Start("notepad", fileWriter.ResultPath);
+                fileWriter = new FileWriter(fileReader.Directory, dataHandler.HandleData());
+                try
+                {
+                    Process.Start("notepad", fileWriter.ResultPath);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
+                Console.WriteLine($"Работа приложения завершена. Найдено {dataHandler.UniqueWordsFound} уникальных слов. Результат сохранены в файле \"result.txt\"");
+                Console.ReadKey();
                 Environment.Exit(0);
             };
             _actions.Add("Обработать файл", handleFile);
         }
+
+
     }
 }

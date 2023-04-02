@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace FileSupport.Interfaces
 {
     public interface IDataHandler
-    {
+    {                
         public Dictionary<string, int> HandleData();
+
+        public int UniqueWordsFound { get; }
     }
 }

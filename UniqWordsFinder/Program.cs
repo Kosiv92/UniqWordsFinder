@@ -13,7 +13,11 @@ namespace UniqWordsFinder
             var client = new ConsoleClient();
             client.AddActions();
             var menu = new Menu(client.Actions);
-            menu.ExecuteMenuItem();
+            while(true)
+            {
+                menu.ExecuteMenuItem();
+            }
+            
         }                
     }
 }

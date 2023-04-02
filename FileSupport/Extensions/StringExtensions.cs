@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace FileSupport.Extensions
 {
     public static class StringExtensions
-    {        public static string DeleteSupplySymbols(this string str, string[] searchedSymbols)
+    {
+        public static string DeleteSupplySymbols(this string str, string[] searchedSymbols)
         {
 
             foreach (string c in searchedSymbols)
