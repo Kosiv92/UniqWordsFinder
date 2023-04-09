@@ -6,6 +6,21 @@ FROM EMPLOYEE
 WHERE SALARY = (SELECT DISTINCT MAX(SALARY) FROM EMPLOYEE);
  
 2. Запрос для вывода максимальной длины цепочки руководителей по таблице сотрудников
+WITH CTE AS
+(
+	SELECT ID, CHIEF_ID, NAME, 0 AS DP
+	FROM EMPLOYEE
+	WHERE CHIEF_ID IS NULL
+	UNION ALL
+	SELECT TMP1.ID, TMP1.CHIEF_ID, TMP1.NAME, TMP2.DP + 1
+	FROM EMPLOYEE as TMP1
+	INNER JOIN CTE as TMP2
+		ON TMP1.CHIEF_ID = TMP2.ID
+)
+SELECT 
+	MAX(DP)
+FROM 
+	CTE;
 
 3. Запрос для вывода отдел, с максимальной суммарной зарплатой сотрудников:
 SELECT TOP(1) DEPARTMENT_ID, SUM(SALARY) AS SUM_SALARY
