@@ -11,10 +11,13 @@ namespace UniqWordsFinder
         static void Main(string[] args)
         {
             var fileReader = new FileReader(InteractionMethods.InputPathToFile()); //считываем файл
-            IDataHandler dataHandler = new SyncRawDataHandler(fileReader.GetReadResultInLines()); //передаем результат обработчику
+            IDataHandler dataHandler = new RawDataHandler(fileReader.GetReadResultInLines()); //передаем результат обработчику
             var client = new ConsoleClient(dataHandler);
-            client.ExecuteInConsole();
-            
+
+            //для вызова метода путем рефлексии
+            //client.CallPrivateMethod(); 
+                        
+            client.Execute();            
         }                
     }
 }

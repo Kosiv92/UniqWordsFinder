@@ -10,6 +10,6 @@ namespace FileSupport.Interfaces
     {                
         public Dictionary<string, int> HandleData();
 
-        public int UniqueWordsFound { get; }
+        public int UniqueWordsFound { get; }                
     }
 }
