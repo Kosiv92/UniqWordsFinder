@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniqWordsFinder", "UniqWord
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSupport", "ConsoleSupport\ConsoleSupport.csproj", "{5F4C0FF6-DD09-4C96-A4C4-6CD951D5565F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSupport", "FileSupport\FileSupport.csproj", "{8C748562-4E68-4C70-89DF-956B3B35CC22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSupport", "FileSupport\FileSupport.csproj", "{8C748562-4E68-4C70-89DF-956B3B35CC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{12A3491B-703F-471B-8C15-429A90AFF483}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{6A96A50D-8A29-498A-86D1-1A7F4E9ECB86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebInterractionLib", "WebInterractionLib\WebInterractionLib.csproj", "{D1736CE7-44F1-4893-9182-039379A44481}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,21 @@ Global
 		{8C748562-4E68-4C70-89DF-956B3B35CC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C748562-4E68-4C70-89DF-956B3B35CC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C748562-4E68-4C70-89DF-956B3B35CC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A3491B-703F-471B-8C15-429A90AFF483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A3491B-703F-471B-8C15-429A90AFF483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A3491B-703F-471B-8C15-429A90AFF483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A3491B-703F-471B-8C15-429A90AFF483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1736CE7-44F1-4893-9182-039379A44481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1736CE7-44F1-4893-9182-039379A44481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1736CE7-44F1-4893-9182-039379A44481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1736CE7-44F1-4893-9182-039379A44481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C748562-4E68-4C70-89DF-956B3B35CC22} = {6A96A50D-8A29-498A-86D1-1A7F4E9ECB86}
+		{D1736CE7-44F1-4893-9182-039379A44481} = {6A96A50D-8A29-498A-86D1-1A7F4E9ECB86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4671F041-87A4-4E8A-8A23-83746096F18A}

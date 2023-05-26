@@ -1,14 +1,8 @@
 ﻿using ConsoleSupport;
 using FileSupport.Core;
 using FileSupport.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UniqWordsFinder
 {
@@ -61,7 +55,7 @@ namespace UniqWordsFinder
             SendResultToWriter(result);
         }
 
-        private void SendResultToWriter(Dictionary<string, int> result)
+        public void SendResultToWriter(Dictionary<string, int> result)
         {
             var _fileWriter = new FileWriter(InteractionMethods.directory, result);
             try
